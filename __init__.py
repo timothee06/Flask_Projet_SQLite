@@ -74,7 +74,8 @@ def enregistrer_client():
     # Exécution de la requête SQL pour insérer un nouveau client
     cursor.execute('INSERT INTO clients (created, nom, prenom, adresse) VALUES (?, ?, ?, ?)', (1002938, nom, prenom, "ICI"))
     conn.commit()
-    conn.close()
+    # conn.close()
+    app.run(debug=True, host='0.0.0.0', port=5000)
     return redirect('/consultation/')  # Rediriger vers la page d'accueil après l'enregistrement
                                                                                                                                        
 if __name__ == "__main__":
